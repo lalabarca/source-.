@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ActiveCity from '../containers/active_city';
 import CitiesList from "../containers/cities_list";
 
 // const cities = [
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <div className="app">
       <CitiesList />
+      <ActiveCity />
     </div>
   );
 };
