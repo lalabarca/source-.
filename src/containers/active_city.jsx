@@ -3,21 +3,20 @@ import { connect } from "react-redux";
 
 class ActiveCity extends Component {
   render () {
-    let card = null;
 
-    if (this.props.activeCity) {
-      card = <div className="active-city">
-        <h1>{this.props.activeCity.name}</h1>
-        <p>{this.props.activeCity.address}</p>
-        <img src={`https://kitt.lewagon.com/placeholder/cities/${this.props.activeCity.slug}`} alt="picture of city" />
-      </div>
+    if (!this.props.activeCity) {
+      return (<div className="active-city">
+        <p>Select a city...</p>
+      </div>);
+    } else {
+      return (
+        <div className="active-city">
+          <h3>{this.props.activeCity.name}</h3>
+          <p>{this.props.activeCity.address}</p>
+          <img src={`https://kitt.lewagon.com/placeholder/cities/${this.props.activeCity.slug}`} alt="picture of city" />
+        </div>
+      );
     }
-
-    return (
-      <div>
-        {card}
-      </div>
-    );
   }
 }
 
